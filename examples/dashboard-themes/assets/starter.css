@@ -1,0 +1,72 @@
+/* Starter theme. Copy this file to assets/<your-theme>.css, change the colours, then run
+   ./switch.sh <your-theme> from the theme folder. The values below reproduce a calm slate look;
+   every line can be changed. */
+@import url("base.css");
+
+:root {
+  /* Text */
+  --ink: #1f2933;              /* main text */
+  --muted: #5b6672;            /* secondary text */
+  --faint: #8a949e;            /* hints and timestamps */
+
+  /* Surfaces */
+  --paper: #eef1f4;
+  --surface: #ffffff;          /* panel and pop-up background */
+  --line: #d3d9df;
+
+  /* Accent and status colours (the "blue" names are legacy; they mean "accent") */
+  --blue: #2f6fd0;
+  --blue2: #e6efff;
+  --teal: #237a57;             /* positive */
+  --teal2: #e2f3ea;
+  --amber: #9a5b00;            /* needs attention */
+  --amber2: #fff1d9;
+  --red: #b3372b;              /* error or danger */
+  --red2: #fde6e3;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 8px 24px rgba(0, 0, 0, .06);
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Page */
+  --page-background: #e3e8ed;
+  --page-background-image: none;
+  --control-background: #ffffff;
+  --focus-ring: #2f6fd0;
+  --card-radius: 8px;
+
+  /* Template variables read by base.css */
+  --t-head-font: var(--sans);  /* headings */
+  --t-head-case: none;         /* or uppercase */
+  --t-head-spacing: normal;
+  --t-panel-bg: var(--surface);
+  --t-edge: #b9c2cb;           /* strong borders */
+  --t-edge-soft: #dfe4e9;      /* dividers */
+  --t-head-bg: #f3f5f7;        /* panel headers, tab strip */
+  --t-head-ink: var(--ink);
+  --t-raise: #f1f4f7;          /* hover and secondary fills */
+  --t-active-bg: #2f6fd0;      /* selected tab or filter */
+  --t-active-ink: #ffffff;
+  --t-banner: linear-gradient(135deg, #2f3c4a, #1f2933); /* big headline and quest header */
+  --t-banner-ink: #ffffff;
+  --t-banner-muted: #c4cdd6;
+  --t-primary-bg: #2f6fd0;     /* main buttons such as New quest and Execute */
+  --t-primary-hover: #3b7be0;
+  --t-primary-ink: #ffffff;
+  --t-primary-edge: #2459a8;
+  --t-primary-shadow: none;
+  --t-button-bg: #ffffff;
+  --t-attn-bg: #fff4e0;        /* drafts waiting for review */
+  --t-attn-edge: #e0a23a;
+  --t-panel-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 10px 24px rgba(30, 35, 40, .08);
+  --t-drop-small: 0 1px 2px rgba(0, 0, 0, .12);
+  --t-drop-hover: 0 2px 6px rgba(0, 0, 0, .16);
+  --t-dialog-shadow: 0 24px 70px rgba(20, 24, 28, .35);
+  --t-terminal-bg: #1f2933;    /* live worker output and command boxes */
+  --t-terminal-ink: #e9edf0;
+  --t-puck-a: #2f6fd0;         /* activity conveyor dots */
+  --t-puck-b: #e0a23a;
+}
+
+/* Optional: picture in the headline banner, and a picture for the idle worker.
+.hero .headline { padding-right: 80px; background: url("banner.png") right 16px center / auto 80% no-repeat, var(--t-banner); }
+.worker-state.asleep { width: 34px; height: 40px; font-size: 0; filter: none; opacity: 1; background: url("idle.png") center / contain no-repeat; }
+*/

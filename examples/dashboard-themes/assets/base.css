@@ -1,0 +1,178 @@
+/* Shared wiring for themes built on this template. Each theme file sets the --t-* colours below and imports
+   this file; you shouldn't need to edit it. It points the dashboard's fixed "Field Guide" colours
+   at those variables, so one theme file can recolour the whole page. */
+
+body { color: var(--ink); }
+
+/* Headings */
+.brand h1, .headline strong, .panel-head h2, .audit-panel h2, .focus-head h2,
+.review-dialog-head h2, .brief-reader-head h2, .brief-index-head h2, dialog h2 {
+  font-family: var(--t-head-font, var(--sans));
+  text-transform: var(--t-head-case, none);
+  letter-spacing: var(--t-head-spacing, normal);
+}
+.brand .eyebrow, .workspace-id-label, .section-label, .field-label, .metric span,
+.brief-group-label, .block h3, .panel-head .hint { color: var(--muted); }
+.workspace-id { border-left-color: var(--t-edge-soft); }
+.workspace-id strong { color: var(--ink); }
+.workspace-id:hover strong, .workspace-id:focus-visible strong, .quest:hover .quest-name { color: var(--blue); }
+.workspace-id::after, .build-chip::after { border-color: var(--t-edge-soft); color: var(--ink); background: var(--surface); }
+.section-label::after, .help-section-label::after { background: var(--t-edge-soft); }
+
+/* Panels */
+.panel, .audit-panel, .briefings {
+  border-color: var(--t-edge); background: var(--t-panel-bg, var(--surface)); box-shadow: var(--t-panel-shadow);
+}
+.panel-head, .audit-panel h2, .review-dialog-head, .brief-index, .brief-picker,
+.brief-picker-list .brief-group-label {
+  border-color: var(--t-edge); color: var(--t-head-ink); background: var(--t-head-bg);
+}
+.brief-index-head { border-color: var(--t-edge); }
+.hero { border-color: var(--t-edge); background: var(--t-edge); box-shadow: var(--t-panel-shadow); }
+.hero > * { background: var(--surface); }
+.hero .metric:hover, .metric:hover { background: var(--t-raise); }
+.metric b { color: var(--ink); }
+.metric.live b { color: var(--teal); }
+.metric.warn b { color: var(--amber); }
+
+/* Banners: the big headline and the open-quest header */
+.hero .headline, .focus-head { border-color: var(--t-edge); color: var(--t-banner-ink); background: var(--t-banner); }
+.hero .headline span { color: var(--t-banner-muted); }
+.focus-head h2 { color: var(--t-banner-ink); }
+.focus-head .pill { border-color: var(--t-banner-muted); }
+.focus-head .back { border-color: var(--t-primary-edge); color: var(--t-primary-ink); background: var(--t-primary-bg); box-shadow: none; }
+.focus-body, .review-dialog-body, dialog:not(#help-dialog) .dialog-body, .brief-reader, .help-pages {
+  background: var(--surface);
+}
+.focus-footer { border-color: var(--t-edge); background: var(--t-head-bg); box-shadow: none; }
+
+/* Lists and rows */
+.focus-body > .block, .event, .audit-item, .run, .quest, .watch, .loop, .dialog-actions,
+.section + .section, .brief-link, .brief-link:last-child, .brief-picker-option, .convo[open] summary,
+.brief-reader-head {
+  border-color: var(--t-edge-soft);
+}
+.event:hover, .audit-item:hover, .run:hover, .quest:hover, .brief-link:hover, .attention-row:hover { background: var(--t-raise); }
+.event-meta a, .trail-quest, .brief-copy a, .brief-copy h3 { color: var(--blue); }
+.event-time, .event-meta, .event-detail, .time, .quest-detail, .issue-cause, .issue-more, .card-context,
+.reply, .convo p, .brief-link-date, .brief-picker-option-date, .brief-reader-meta, .brief-empty,
+.brief-index-head p, .live-age { color: var(--muted); }
+.markdown, .brief-copy, .convo-turn .rich-copy, .queued-message, .queue-purpose b, .issue-next, .brief-link { color: var(--ink); }
+.markdown code, .rich-copy code, .brief-copy code { border-color: var(--t-edge-soft); color: var(--ink); background: var(--t-raise); }
+.live-age { border-bottom-color: var(--t-edge-soft); }
+.scroll { scrollbar-color: var(--t-edge-soft) transparent; }
+
+/* Navigation and menus */
+.navs { border-color: var(--t-edge); background: var(--t-head-bg); box-shadow: var(--t-drop-small); }
+.nav, .filter { color: var(--muted); }
+.nav + .nav { border-left-color: var(--t-edge); }
+.nav.active, .nav:hover, .filter.active, .filter:hover, .mode-option:hover, .mode-option[aria-selected="true"],
+.brief-link.selected, .brief-picker-option:hover, .brief-picker-option[aria-selected="true"] {
+  border-color: var(--t-edge); color: var(--t-active-ink); background: var(--t-active-bg);
+}
+.brief-link.selected .brief-link-date, .brief-picker-option[aria-selected="true"] .brief-picker-option-date { color: var(--t-active-ink); }
+.mode-menu-list, .brief-picker-list { border-color: var(--t-edge); background: var(--surface); box-shadow: var(--t-drop-small); }
+.mode-option, .brief-picker-option { border-color: var(--t-edge-soft); color: var(--ink); background: var(--surface); }
+.mode-option:hover, .mode-option[aria-selected="true"], .brief-picker-option:hover,
+.brief-picker-option[aria-selected="true"] { color: var(--t-active-ink); background: var(--t-active-bg); }
+
+/* Buttons */
+.button, .icon-button, .help-trigger {
+  border-color: var(--t-edge); color: var(--ink); background: var(--t-button-bg); box-shadow: var(--t-drop-small);
+}
+.button:hover, .help-trigger:hover, .icon-button:hover { color: var(--ink); background: var(--t-raise); box-shadow: var(--t-drop-hover); }
+.button:active { box-shadow: none; }
+.button.primary { border-color: var(--t-primary-edge); color: var(--t-primary-ink); background: var(--t-primary-bg); box-shadow: var(--t-primary-shadow); }
+.button.primary:hover { color: var(--t-primary-ink); background: var(--t-primary-hover); box-shadow: var(--t-primary-shadow); }
+.button.danger { border-color: var(--red); color: var(--red); background: var(--red2); box-shadow: none; }
+.button.workspace-launch, .button.workspace-launch:hover { border-color: var(--teal); color: var(--teal); background: var(--teal2); box-shadow: none; }
+.config-trigger { border-color: var(--t-edge-soft); color: var(--muted); }
+.config-trigger:hover { color: var(--ink); background: var(--t-raise); }
+.back { border-color: var(--t-edge-soft); color: var(--blue); background: var(--blue2); }
+.help-trigger-icon { border-color: var(--t-primary-ink); color: var(--t-primary-ink); background: var(--t-primary-bg); box-shadow: 0 0 0 2px var(--t-primary-edge); }
+
+/* Status */
+.connection { border-color: var(--teal); color: var(--teal); background: var(--teal2); }
+.connection.stale { border-color: var(--amber); color: var(--amber); background: var(--amber2); }
+.connection.down { border-color: var(--red); color: var(--red); background: var(--red2); }
+.count, .pill { border-color: var(--t-edge-soft); }
+.count, .pill.neutral, .pill.low { color: var(--muted); background: var(--t-raise); }
+.pill.active, .pill.send, .pill.done { color: var(--teal); background: var(--teal2); }
+.pill.blocked, .pill.cancelled, .pill.stalled { color: var(--red); background: var(--red2); }
+.pill.high, .pill.pending_review, .pill.needs_reply, .pill.executing { color: var(--amber); background: var(--amber2); }
+.pill.normal, .pill.info, .pill.reviewed, .pill.draft { color: var(--blue); background: var(--blue2); }
+.surface-badge, .surface-badge.slack, .surface-badge.github, .surface-badge.email, .surface-badge.jira,
+.surface-badge.repository { border-color: var(--t-edge-soft); color: var(--muted); background: var(--t-raise); }
+.brief-kind, .brief-kind.weekly, .brief-kind.monthly, .brief-kind.evening { background: transparent; }
+.brief-kind { color: var(--amber); }
+.brief-kind.weekly { color: var(--teal); }
+.brief-kind.monthly { color: var(--red); }
+.brief-kind.evening { color: var(--blue); }
+.signal.action { box-shadow: 0 0 0 3px var(--red2); }
+.signal.review, .signal.uncertain { box-shadow: 0 0 0 3px var(--amber2); }
+.signal.running { box-shadow: 0 0 0 3px var(--teal2); }
+.signal.transient { box-shadow: 0 0 0 3px var(--blue2); }
+.event-dot.agent { background: var(--t-primary-bg); }
+.event-dot.external { background: var(--teal); }
+.event-dot.alert { background: var(--amber); }
+
+/* Review queue and quest cards */
+.review-card, .attention-row { border-color: var(--t-attn-edge); color: var(--ink); background: var(--t-attn-bg); box-shadow: none; }
+.attention-row.settled, .queued, .reply, .awaiting { border-color: var(--t-edge-soft); color: var(--ink); background: var(--t-raise); box-shadow: none; }
+.review-card.stalled { border-color: var(--red); background: var(--red2); }
+.review-alert, .review-alert.context { border-color: var(--t-attn-edge); color: var(--ink); background: var(--t-attn-bg); }
+.review-alert.latest { border-color: var(--red); color: var(--red); background: var(--red2); }
+.review-preview, .review-destination { border-color: var(--t-edge-soft); background: var(--t-raise); }
+.risk { color: var(--ink); background: var(--amber2); }
+.issue-card { border-color: var(--t-edge); background: var(--surface); box-shadow: none; }
+.issue-card.action { background: var(--red2); }
+.issue-card.uncertain { background: var(--amber2); }
+.issue-card.transient { border-color: var(--t-edge); background: var(--blue2); box-shadow: none; }
+.issue-card.action .issue-icon { color: var(--red); background: transparent; }
+.issue-card.uncertain .issue-icon { color: var(--amber); background: transparent; }
+.issue-card.transient .issue-icon { color: var(--blue); background: transparent; }
+.convo { border-color: var(--t-edge-soft); background: var(--t-raise); }
+.convo-turn.agent { border-color: var(--t-edge-soft); background: var(--surface); }
+.convo-turn.reviewer { border-color: var(--t-attn-edge); background: var(--t-attn-bg); }
+
+/* Typing boxes */
+textarea, input, select { border-color: var(--t-edge-soft); color: var(--ink); }
+textarea:focus, input:focus, select:focus { border-color: var(--blue); }
+.composer textarea { border-color: var(--t-edge-soft); color: var(--blue); }
+.composer:not(.open) textarea:hover { border-color: var(--blue); background: var(--t-raise); }
+.composer.open textarea { border-color: var(--t-edge); color: var(--ink); }
+
+/* Pop-ups */
+dialog:not(#help-dialog), #help-dialog, #quest-dialog {
+  border-color: var(--t-edge); color: var(--ink); background: var(--surface); box-shadow: var(--t-dialog-shadow);
+}
+.toast { border-color: var(--t-edge); color: var(--ink); background: var(--surface); box-shadow: var(--t-dialog-shadow); }
+.livebox, .help-place.terminal { border-color: var(--t-edge); color: var(--t-terminal-ink); background: var(--t-terminal-bg); box-shadow: none; }
+.quest-guide-cmd pre { color: var(--t-terminal-ink); background: var(--t-terminal-bg); }
+
+/* Field Guide (the ? help window) */
+.help-shell { border-color: var(--t-edge); background: var(--surface); }
+.help-shell::before { opacity: 0; }
+.help-mast { border-color: var(--t-edge); color: var(--t-banner-ink); background: var(--t-banner); }
+.help-mast p, .help-kicker { color: var(--t-banner-muted); }
+.help-tabs { border-color: var(--t-edge); background: var(--t-head-bg); }
+.help-tab { border-color: var(--t-edge-soft); border-bottom-color: var(--t-edge); color: var(--muted); background: var(--t-raise); }
+.help-tab[aria-selected="true"] { border-color: var(--t-edge); border-bottom-color: var(--surface); color: var(--ink); background: var(--surface); }
+.help-tab-number { background: var(--muted); }
+.help-tab[aria-selected="true"] .help-tab-number, .help-step b { color: var(--t-primary-ink); background: var(--t-primary-bg); }
+.help-page p, .help-life-state span { color: var(--muted); }
+.help-step, .help-spell, .help-place, .help-lifecycle { border-color: var(--t-edge-soft); color: var(--ink); background: var(--t-raise); box-shadow: none; }
+.help-spell-icon, .help-life-state i, .help-guide-mark { border-color: var(--t-edge); background: var(--surface); box-shadow: none; }
+.help-callout, .help-callout p, .help-callout strong { color: var(--ink); }
+.help-callout { border-color: var(--t-attn-edge); background: var(--t-attn-bg); box-shadow: none; }
+.help-page code { border-color: var(--t-edge-soft); color: var(--ink); background: var(--t-raise); }
+.help-footnote strong { color: var(--ink); }
+.help-close { border-color: var(--t-edge); color: var(--ink); background: var(--t-button-bg); box-shadow: var(--t-drop-small); }
+.help-close:hover { background: var(--t-raise); }
+.help-step:not(:last-child)::after { text-shadow: none; }
+
+/* The little activity conveyor under the headline */
+.motion-stream::after { background: var(--t-edge-soft); }
+.motion-puck { border-color: var(--t-puck-a); background: var(--t-puck-a); box-shadow: none; }
+.motion-puck:nth-child(3n+2) { border-color: var(--t-puck-b); background: var(--t-puck-b); }
+.motion-puck::after, .motion-puck:nth-child(3n+2)::after { background: transparent; }

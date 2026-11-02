@@ -1,0 +1,10 @@
+{
+  "logo": "assets/logo.png",
+  "activity": {
+    "images": ["assets/strip-1.png", "assets/strip-2.png", "assets/strip-3.png"],
+    "height": 28,
+    "gap": 20,
+    "speed": 30,
+    "direction": "right"
+  }
+}
